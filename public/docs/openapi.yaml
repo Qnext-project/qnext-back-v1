@@ -1,0 +1,1201 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/v1/login:
+    post:
+      summary: ''
+      operationId: postApiV1Login
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: ''
+                  example: reiciendis
+                password:
+                  type: string
+                  description: ''
+                  example: E2@1TPGmePER=q~_DY
+              required:
+                - username
+                - password
+      security: []
+  /api/v1/socket:
+    post:
+      summary: ''
+      operationId: postApiV1Socket
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/admin/clinic/edit:
+    post:
+      summary: ''
+      operationId: postApiV1AdminClinicEdit
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/admin/room:
+    post:
+      summary: ''
+      operationId: postApiV1AdminRoom
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: laboriosam
+                number:
+                  type: string
+                  description: ''
+                  example: dignissimos
+                media_id:
+                  type: integer
+                  description: ''
+                  example: 3
+              required:
+                - name
+                - number
+      security: []
+    get:
+      summary: ''
+      operationId: getApiV1AdminRoom
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/admin/room/{room_id}':
+    put:
+      summary: ''
+      operationId: putApiV1AdminRoomRoom_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: quia
+                number:
+                  type: string
+                  description: ''
+                  example: vel
+                media_id:
+                  type: integer
+                  description: ''
+                  example: 12
+      security: []
+    get:
+      summary: ''
+      operationId: getApiV1AdminRoomRoom_id
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: room_id
+        description: 'The ID of the room.'
+        example: 13
+        required: true
+        schema:
+          type: integer
+  '/api/v1/admin/room/{room}':
+    delete:
+      summary: ''
+      operationId: deleteApiV1AdminRoomRoom
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: room
+        description: 'The room.'
+        example: 8
+        required: true
+        schema:
+          type: integer
+  /api/v1/admin/doctor:
+    post:
+      summary: ''
+      operationId: postApiV1AdminDoctor
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: ''
+                  example: deserunt
+                password:
+                  type: string
+                  description: ''
+                  example: '~+]asan&t4Yv*[h^t'
+                acl:
+                  type: object
+                  description: 'This field is required when none of <code>setting</code>, <code>queue</code>, and <code>personnel</code> are present.'
+                  example: null
+                  properties: {  }
+                first_name:
+                  type: string
+                  description: ''
+                  example: repudiandae
+                last_name:
+                  type: string
+                  description: ''
+                  example: dignissimos
+                media_id:
+                  type: integer
+                  description: ''
+                  example: 4
+                expertise_id:
+                  type: integer
+                  description: ''
+                  example: 18
+                title_id:
+                  type: integer
+                  description: ''
+                  example: 5
+                role:
+                  type: string
+                  description: ''
+                  example: in
+      security: []
+    get:
+      summary: ''
+      operationId: getApiV1AdminDoctor
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/admin/doctor/{user_id}':
+    put:
+      summary: ''
+      operationId: putApiV1AdminDoctorUser_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: ''
+                  example: nesciunt
+                password:
+                  type: string
+                  description: ''
+                  example: 'r4=}}yZD-do469]'
+                acl:
+                  type: object
+                  description: 'This field is required when none of <code>setting</code>, <code>queue</code>, and <code>personnel</code> are present.'
+                  example: null
+                  properties: {  }
+                first_name:
+                  type: string
+                  description: ''
+                  example: aliquam
+                last_name:
+                  type: string
+                  description: ''
+                  example: voluptatum
+                media_id:
+                  type: string
+                  description: ''
+                  example: sit
+      security: []
+    get:
+      summary: ''
+      operationId: getApiV1AdminDoctorUser_id
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: user_id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/v1/admin/doctor/{user}':
+    delete:
+      summary: ''
+      operationId: deleteApiV1AdminDoctorUser
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: user
+        description: ''
+        example: est
+        required: true
+        schema:
+          type: string
+  '/api/v1/admin/doctor/{user_id}/{room_id}':
+    get:
+      summary: ''
+      operationId: getApiV1AdminDoctorUser_idRoom_id
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: user_id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: room_id
+        description: 'The ID of the room.'
+        example: 19
+        required: true
+        schema:
+          type: integer
+  /api/v1/admin/doctor/turn:
+    post:
+      summary: ''
+      operationId: postApiV1AdminDoctorTurn
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                turn_number:
+                  type: integer
+                  description: ''
+                  example: 8
+              required:
+                - turn_number
+      security: []
+  /api/v1/admin/expertise:
+    post:
+      summary: ''
+      operationId: postApiV1AdminExpertise
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: libero
+                is_title:
+                  type: boolean
+                  description: ''
+                  example: true
+                media_id:
+                  type: integer
+                  description: ''
+                  example: 17
+              required:
+                - name
+                - is_title
+      security: []
+    get:
+      summary: ''
+      operationId: getApiV1AdminExpertise
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/admin/expertise/{expertise_id}':
+    put:
+      summary: ''
+      operationId: putApiV1AdminExpertiseExpertise_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: perferendis
+                is_title:
+                  type: boolean
+                  description: ''
+                  example: false
+                media_id:
+                  type: integer
+                  description: ''
+                  example: 19
+      security: []
+    get:
+      summary: ''
+      operationId: getApiV1AdminExpertiseExpertise_id
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: expertise_id
+        description: 'The ID of the expertise.'
+        example: 11
+        required: true
+        schema:
+          type: integer
+  '/api/v1/admin/expertise/{expertise}':
+    delete:
+      summary: ''
+      operationId: deleteApiV1AdminExpertiseExpertise
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: expertise
+        description: 'The expertise.'
+        example: 11
+        required: true
+        schema:
+          type: integer
+  '/api/v1/admin/media/{type}':
+    get:
+      summary: ''
+      operationId: getApiV1AdminMediaType
+      description: ''
+      parameters: []
+      responses:
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The route api/v1/admin/media/doctor|number|room|expertise could not be found.'
+                  exception: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+                  file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php
+                  line: 44
+                  trace:
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php
+                      line: 162
+                      function: handleMatchedRoute
+                      class: Illuminate\Routing\AbstractRouteCollection
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                      line: 761
+                      function: match
+                      class: Illuminate\Routing\RouteCollection
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                      line: 748
+                      function: findRoute
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                      line: 737
+                      function: dispatchToRoute
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                      line: 200
+                      function: dispatch
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 141
+                      function: 'Illuminate\Foundation\Http\{closure}'
+                      class: Illuminate\Foundation\Http\Kernel
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
+                      line: 21
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php
+                      line: 31
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
+                      line: 21
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php
+                      line: 40
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\TrimStrings
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php
+                      line: 27
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\ValidatePostSize
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php
+                      line: 99
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php
+                      line: 62
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Http\Middleware\HandleCors
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php
+                      line: 39
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 180
+                      function: handle
+                      class: Illuminate\Http\Middleware\TrustProxies
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                      line: 116
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                      line: 175
+                      function: then
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                      line: 144
+                      function: sendRequestThroughRouter
+                      class: Illuminate\Foundation\Http\Kernel
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                      line: 299
+                      function: handle
+                      class: Illuminate\Foundation\Http\Kernel
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                      line: 287
+                      function: callLaravelOrLumenRoute
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                      line: 92
+                      function: makeApiCall
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                      line: 45
+                      function: makeResponseCall
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                      line: 35
+                      function: makeResponseCallIfConditionsPass
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                      line: 209
+                      function: __invoke
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                      line: 163
+                      function: iterateThroughStrategies
+                      class: Knuckles\Scribe\Extracting\Extractor
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                      line: 95
+                      function: fetchResponses
+                      class: Knuckles\Scribe\Extracting\Extractor
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                      line: 124
+                      function: processRoute
+                      class: Knuckles\Scribe\Extracting\Extractor
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                      line: 71
+                      function: extractEndpointsInfoFromLaravelApp
+                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                      line: 49
+                      function: extractEndpointsInfoAndWriteToDisk
+                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php
+                      line: 51
+                      function: get
+                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                      line: 36
+                      function: handle
+                      class: Knuckles\Scribe\Commands\GenerateDocumentation
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Container/Util.php
+                      line: 41
+                      function: 'Illuminate\Container\{closure}'
+                      class: Illuminate\Container\BoundMethod
+                      type: '::'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                      line: 93
+                      function: unwrapIfClosure
+                      class: Illuminate\Container\Util
+                      type: '::'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                      line: 35
+                      function: callBoundMethod
+                      class: Illuminate\Container\BoundMethod
+                      type: '::'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Container/Container.php
+                      line: 662
+                      function: call
+                      class: Illuminate\Container\BoundMethod
+                      type: '::'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Console/Command.php
+                      line: 211
+                      function: call
+                      class: Illuminate\Container\Container
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/symfony/console/Command/Command.php
+                      line: 326
+                      function: execute
+                      class: Illuminate\Console\Command
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Console/Command.php
+                      line: 180
+                      function: run
+                      class: Symfony\Component\Console\Command\Command
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/symfony/console/Application.php
+                      line: 1096
+                      function: run
+                      class: Illuminate\Console\Command
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/symfony/console/Application.php
+                      line: 324
+                      function: doRunCommand
+                      class: Symfony\Component\Console\Application
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/symfony/console/Application.php
+                      line: 175
+                      function: doRun
+                      class: Symfony\Component\Console\Application
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php
+                      line: 201
+                      function: run
+                      class: Symfony\Component\Console\Application
+                      type: '->'
+                    -
+                      file: /var/www/html/back/qnext/artisan
+                      line: 35
+                      function: handle
+                      class: Illuminate\Foundation\Console\Kernel
+                      type: '->'
+                properties:
+                  message:
+                    type: string
+                    example: 'The route api/v1/admin/media/doctor|number|room|expertise could not be found.'
+                  exception:
+                    type: string
+                    example: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+                  file:
+                    type: string
+                    example: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php
+                  line:
+                    type: integer
+                    example: 44
+                  trace:
+                    type: array
+                    example:
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php
+                        line: 162
+                        function: handleMatchedRoute
+                        class: Illuminate\Routing\AbstractRouteCollection
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                        line: 761
+                        function: match
+                        class: Illuminate\Routing\RouteCollection
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                        line: 748
+                        function: findRoute
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Routing/Router.php
+                        line: 737
+                        function: dispatchToRoute
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                        line: 200
+                        function: dispatch
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 141
+                        function: 'Illuminate\Foundation\Http\{closure}'
+                        class: Illuminate\Foundation\Http\Kernel
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
+                        line: 21
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php
+                        line: 31
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php
+                        line: 21
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php
+                        line: 40
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\TrimStrings
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php
+                        line: 27
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\ValidatePostSize
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php
+                        line: 99
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php
+                        line: 62
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Http\Middleware\HandleCors
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php
+                        line: 39
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 180
+                        function: handle
+                        class: Illuminate\Http\Middleware\TrustProxies
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php
+                        line: 116
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                        line: 175
+                        function: then
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php
+                        line: 144
+                        function: sendRequestThroughRouter
+                        class: Illuminate\Foundation\Http\Kernel
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                        line: 299
+                        function: handle
+                        class: Illuminate\Foundation\Http\Kernel
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                        line: 287
+                        function: callLaravelOrLumenRoute
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                        line: 92
+                        function: makeApiCall
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                        line: 45
+                        function: makeResponseCall
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php
+                        line: 35
+                        function: makeResponseCallIfConditionsPass
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                        line: 209
+                        function: __invoke
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                        line: 163
+                        function: iterateThroughStrategies
+                        class: Knuckles\Scribe\Extracting\Extractor
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php
+                        line: 95
+                        function: fetchResponses
+                        class: Knuckles\Scribe\Extracting\Extractor
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                        line: 124
+                        function: processRoute
+                        class: Knuckles\Scribe\Extracting\Extractor
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                        line: 71
+                        function: extractEndpointsInfoFromLaravelApp
+                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php
+                        line: 49
+                        function: extractEndpointsInfoAndWriteToDisk
+                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php
+                        line: 51
+                        function: get
+                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                        line: 36
+                        function: handle
+                        class: Knuckles\Scribe\Commands\GenerateDocumentation
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Container/Util.php
+                        line: 41
+                        function: 'Illuminate\Container\{closure}'
+                        class: Illuminate\Container\BoundMethod
+                        type: '::'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                        line: 93
+                        function: unwrapIfClosure
+                        class: Illuminate\Container\Util
+                        type: '::'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+                        line: 35
+                        function: callBoundMethod
+                        class: Illuminate\Container\BoundMethod
+                        type: '::'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Container/Container.php
+                        line: 662
+                        function: call
+                        class: Illuminate\Container\BoundMethod
+                        type: '::'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Console/Command.php
+                        line: 211
+                        function: call
+                        class: Illuminate\Container\Container
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/symfony/console/Command/Command.php
+                        line: 326
+                        function: execute
+                        class: Illuminate\Console\Command
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Console/Command.php
+                        line: 180
+                        function: run
+                        class: Symfony\Component\Console\Command\Command
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/symfony/console/Application.php
+                        line: 1096
+                        function: run
+                        class: Illuminate\Console\Command
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/symfony/console/Application.php
+                        line: 324
+                        function: doRunCommand
+                        class: Symfony\Component\Console\Application
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/symfony/console/Application.php
+                        line: 175
+                        function: doRun
+                        class: Symfony\Component\Console\Application
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php
+                        line: 201
+                        function: run
+                        class: Symfony\Component\Console\Application
+                        type: '->'
+                      -
+                        file: /var/www/html/back/qnext/artisan
+                        line: 35
+                        function: handle
+                        class: Illuminate\Foundation\Console\Kernel
+                        type: '->'
+                    items:
+                      type: object
+                      properties:
+                        file:
+                          type: string
+                          example: /var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php
+                        line:
+                          type: integer
+                          example: 162
+                        function:
+                          type: string
+                          example: handleMatchedRoute
+                        class:
+                          type: string
+                          example: Illuminate\Routing\AbstractRouteCollection
+                        type:
+                          type: string
+                          example: '->'
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1AdminMediaType
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: type
+        description: ''
+        example: doctor|number|room|expertise
+        required: true
+        schema:
+          type: string
+tags:
+  -
+    name: Endpoints
+    description: ''
