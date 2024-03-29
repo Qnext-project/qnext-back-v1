@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateRoomRequest;
 use App\Http\Requests\EditRoomRequest;
+use App\Models\Floor;
 use App\Models\Media;
 use App\Models\Room;
 use Illuminate\Http\Request;
@@ -47,5 +48,28 @@ class RoomController extends Controller
         $room = Room::find($room);
         $room->delete();
         return response()->noContent();
+    }
+
+    public function createFloor(Request $request)
+    {
+        $request = $request->validate([
+            'name' => 'required|string'
+        ]);
+        $floor = Floor::create($request);
+        return response()->json($floor);
+    }
+    public function editFloor(Request $request, Floor $floor)
+    {
+        $request = $request->validate([
+            'name' => 'required|string'
+        ]);
+        $floor = $floor->update($request);
+        return response()->json($floor);
+    }
+
+    public function floorList()
+    {
+        $floors = Floor::all();
+        return response()->json($floors);
     }
 }

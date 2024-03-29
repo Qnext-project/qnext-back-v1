@@ -41,6 +41,9 @@ Route::prefix('v1')->group(function () {
                     Route::get('', [RoomController::class, 'index']);
                     Route::get('{room}', [RoomController::class, 'show']);
                     Route::delete('{room}', [RoomController::class, 'remove']);
+                    Route::post('floor', [RoomController::class, 'createFloor']);
+                    Route::put('floor/{room}', [RoomController::class, 'editFloor']);
+                    Route::get('floor', [RoomController::class, 'floorList']);
                 });
                 Route::prefix('doctor')->group(function () {
                     Route::post('', [DoctorController::class, 'create']);

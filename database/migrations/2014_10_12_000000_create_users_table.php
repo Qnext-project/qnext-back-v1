@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('password')->nullable();
             $table->enum('role', ['admin', 'doctor'])->default('doctor');
             $table->text('acl')->nullable();
-            // $table->integer('current_turn_number')->nullable();
+            $table->double('current_turn_number')->nullable();
             $table->time('current_turn_time')->nullable();
             $table->boolean('is_super_admin')->default(0);
             $table->text('socket_id')->nullable();

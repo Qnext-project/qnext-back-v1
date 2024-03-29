@@ -13,6 +13,7 @@ class Room extends Model
         'number',
         'media_id',
         'clinic_id',
+        'floor_id'
     ];
 
     public function media()
@@ -25,5 +26,8 @@ class Room extends Model
         return $this->belongsTo(Clinic::class, 'clinic_id');
     }
 
-
+    public function floors()
+    {
+        return $this->belongsTo(Floor::class, 'floor_id');
+    }
 }

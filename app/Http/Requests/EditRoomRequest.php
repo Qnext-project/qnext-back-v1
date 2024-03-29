@@ -25,7 +25,8 @@ class EditRoomRequest extends FormRequest
             //
             'name' => 'nullable|string',
             'number' => 'nullable|string',
-            'media_id' => 'nullable|integer'
+            'media_id' => 'nullable|integer',
+            'floor_id' => 'nullable|integer'
         ];
     }
 }

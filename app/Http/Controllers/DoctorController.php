@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ChangeTurnRequest;
 use App\Http\Requests\CreateDoctorRequest;
 use App\Http\Requests\EditDoctorRequest;
+use App\Models\Floor;
 use App\Models\Room;
 use App\Models\User;
 use App\Models\Media;
@@ -117,10 +118,19 @@ class DoctorController extends Controller
     public function getDocVoice(Request $request)
     {
         $userUp = User::find($request['id']);
+        $floorId = Floor::find($request['floor_id'] ?? 1)?->id;
         $attachedDoc = User::find($userUp->doctor_id);
         $expTitle = Expertise::find($attachedDoc->title_id);
         $exp = Expertise::find($attachedDoc->expertise_id);
-        $room = Room::find($userUp->doc_info['room']);
+        $room = Room::where(
+            [[
+                'id', '=', $userUp->doc_info['room']
+            ],
+            [
+                'floor_id', '=', $floorId
+            ]
+            ]
+        );
         if ($userUp->current_turn_number == 0 || $userUp->current_turn_number == null) {
             return response()->json(null, 200);
         }

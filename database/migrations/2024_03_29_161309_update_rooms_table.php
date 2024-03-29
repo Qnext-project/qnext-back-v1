@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::table('users', function (Blueprint $table) {
-            $table->double('current_turn_number')->nullable();
+        Schema::table('rooms', function (Blueprint $table) {
+            $table->foreignId('floor_id')->nullable()->constrained('floors');
         });
     }
 
