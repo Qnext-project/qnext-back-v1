@@ -16,6 +16,7 @@ class Room extends Model
         'floor_id'
     ];
 
+    protected $appends = ['floor_name'];
     public function media()
     {
         return $this->belongsTo(Media::class, 'media_id');
@@ -30,4 +31,9 @@ class Room extends Model
     {
         return $this->belongsTo(Floor::class, 'floor_id');
     }
+
+    public function getFloorNameAttribute(){
+
+	return $this->floor_id ? Floor::find($this->floor_id)?->name : null;
+}
 }

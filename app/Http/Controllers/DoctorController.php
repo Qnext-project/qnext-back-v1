@@ -62,9 +62,13 @@ class DoctorController extends Controller
         return response()->json($user);
     }
 
-    public function adminList()
+    public function adminList(Floor $floor)
     {
-        $doctors = User::where('role', 'admin')->whereNotNull('current_turn_number')->get();
+	$rooms = Room::where('floor_id', $floor->id)->get();
+	$doctors = [];
+	foreach ($rooms as $room) {
+        $doctors[] = User::where([['role', '=', 'admin'], ['room_id', '=', $room->id]])->whereNotNull('current_turn_number')->first();
+}
         return response()->json($doctors);
     }
 
@@ -115,10 +119,22 @@ class DoctorController extends Controller
         return response()->noContent();
     }
 
+	public function purgeUser(Request $request)
+{
+	$user = $request['user_id'];
+$user = User::find($user);
+        $user->update([
+            'doctor_id' => null,
+            'room_id' => null,
+            'current_turn_number' => null,
+            'current_turn_time' => null
+        ]);
+return response()->noContent();
+}
+
     public function getDocVoice(Request $request)
     {
         $userUp = User::find($request['id']);
-        $floorId = Floor::find($request['floor_id'] ?? 1)?->id;
         $attachedDoc = User::find($userUp->doctor_id);
         $expTitle = Expertise::find($attachedDoc->title_id);
         $exp = Expertise::find($attachedDoc->expertise_id);
@@ -126,9 +142,6 @@ class DoctorController extends Controller
             [[
                 'id', '=', $userUp->doc_info['room']
             ],
-            [
-                'floor_id', '=', $floorId
-            ]
             ]
         );
         if ($userUp->current_turn_number == 0 || $userUp->current_turn_number == null) {

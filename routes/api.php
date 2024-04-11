@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Clinic;
+use App\Models\Floor;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -28,22 +29,27 @@ Route::prefix('v1')->group(function () {
             //admin routes
             Route::prefix('admin')->middleware('auth.admin')->group(function () {
                 Route::get('list/full', [DoctorController::class, 'listAd']);
-                Route::get('list', [DoctorController::class, 'adminList']);
+                Route::get('list/queue/{floor}', [DoctorController::class, 'adminList']);
                 Route::post('clinic/edit', function(Request $request){
                     $clinic = $request->session()->get('clinic');
                     $clinic = Clinic::find($clinic->getId());
                     $clinic->update(['name' => $request['name']]);
                     return response()->json($clinic);
                 });
+		Route::prefix('floors')->group(function () {
+                    Route::post('', [RoomController::class, 'createFloor']);
+                    Route::put('{floor}', [RoomController::class, 'editFloor']);
+                    Route::get('', [RoomController::class, 'floorList']);
+ 		    Route::delete('{floor}', function(Floor $floor){
+	return $floor->delete();
+});
+});
                 Route::prefix('room')->group(function () {
                     Route::post('', [RoomController::class, 'create']);
                     Route::put('{room}', [RoomController::class, 'edit']);
                     Route::get('', [RoomController::class, 'index']);
                     Route::get('{room}', [RoomController::class, 'show']);
                     Route::delete('{room}', [RoomController::class, 'remove']);
-                    Route::post('floor', [RoomController::class, 'createFloor']);
-                    Route::put('floor/{floor}', [RoomController::class, 'editFloor']);
-                    Route::get('floor', [RoomController::class, 'floorList']);
                 });
                 Route::prefix('doctor')->group(function () {
                     Route::post('', [DoctorController::class, 'create']);
@@ -55,6 +61,7 @@ Route::prefix('v1')->group(function () {
                     Route::post('turn', [DoctorController::class, 'updateTurn']);
                     Route::post('turn/voice', [DoctorController::class, 'getDocVoice']);
                     Route::post('purge', [DoctorController::class, 'purgeAll']);
+		   Route::post('purge/user', [DoctorController::class, 'purgeUser']);
                 });
                 Route::prefix('expertise')->group(function () {
                     Route::post('', [ExpertiseController::class, 'create']);

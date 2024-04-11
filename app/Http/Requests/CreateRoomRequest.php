@@ -25,8 +25,8 @@ class CreateRoomRequest extends FormRequest
             //
             'name' => 'required|string',
             'number' => 'required|string',
-            'media_id' => 'nullable|integer',
-            'floor_id' => 'nullable|integer'
+            'media_id' => 'nullable|string',
+            'floor_id' => 'nullable|string'
         ];
     }
 }

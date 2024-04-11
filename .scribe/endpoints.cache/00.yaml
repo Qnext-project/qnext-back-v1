@@ -28,7 +28,7 @@ endpoints:
         name: username
         description: ''
         required: true
-        example: reiciendis
+        example: magnam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -37,16 +37,575 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: E2@1TPGmePER=q~_DY
+        example: 'g#3{FoEHt(=?S'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      username: reiciendis
-      password: E2@1TPGmePER=q~_DY
+      username: magnam
+      password: 'g#3{FoEHt(=?S'
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 500
+        content: |-
+          {
+              "message": "SQLSTATE[42S02]: Base table or view not found: 1146 Table 'qnext.users' doesn't exist (Connection: mysql, SQL: select * from `users` where `username` = magnam and `users`.`deleted_at` is null limit 1)",
+              "exception": "Illuminate\\Database\\QueryException",
+              "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+              "line": 829,
+              "trace": [
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+                      "line": 783,
+                      "function": "runQueryCallback",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+                      "line": 431,
+                      "function": "run",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 2872,
+                      "function": "select",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 2860,
+                      "function": "runSelect",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 3414,
+                      "function": "Illuminate\\Database\\Query\\{closure}",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 2861,
+                      "function": "onceWithColumns",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
+                      "line": 738,
+                      "function": "get",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
+                      "line": 722,
+                      "function": "getModels",
+                      "class": "Illuminate\\Database\\Eloquent\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php",
+                      "line": 333,
+                      "function": "get",
+                      "class": "Illuminate\\Database\\Eloquent\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Auth/EloquentUserProvider.php",
+                      "line": 139,
+                      "function": "first",
+                      "class": "Illuminate\\Database\\Eloquent\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/tymon/jwt-auth/src/JWTGuard.php",
+                      "line": 121,
+                      "function": "retrieveByCredentials",
+                      "class": "Illuminate\\Auth\\EloquentUserProvider",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Auth/AuthManager.php",
+                      "line": 340,
+                      "function": "attempt",
+                      "class": "Tymon\\JWTAuth\\JWTGuard",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/app/Http/Controllers/UserController.php",
+                      "line": 71,
+                      "function": "__call",
+                      "class": "Illuminate\\Auth\\AuthManager",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Controller.php",
+                      "line": 54,
+                      "function": "login",
+                      "class": "App\\Http\\Controllers\\UserController",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php",
+                      "line": 43,
+                      "function": "callAction",
+                      "class": "Illuminate\\Routing\\Controller",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+                      "line": 260,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\ControllerDispatcher",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+                      "line": 205,
+                      "function": "runController",
+                      "class": "Illuminate\\Routing\\Route",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 806,
+                      "function": "run",
+                      "class": "Illuminate\\Routing\\Route",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 144,
+                      "function": "Illuminate\\Routing\\{closure}",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php",
+                      "line": 50,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 159,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 135,
+                      "function": "handleRequest",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 87,
+                      "function": "handleRequestUsingNamedLimiter",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php",
+                      "line": 121,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php",
+                      "line": 64,
+                      "function": "handleStatefulRequest",
+                      "class": "Illuminate\\Session\\Middleware\\StartSession",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Session\\Middleware\\StartSession",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 119,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 807,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 784,
+                      "function": "runRouteWithinStack",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 748,
+                      "function": "runRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 737,
+                      "function": "dispatchToRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 200,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 144,
+                      "function": "Illuminate\\Foundation\\Http\\{closure}",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+                      "line": 31,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+                      "line": 40,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php",
+                      "line": 27,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+                      "line": 99,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+                      "line": 62,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\HandleCors",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+                      "line": 39,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 119,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 175,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 144,
+                      "function": "sendRequestThroughRouter",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 300,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 288,
+                      "function": "callLaravelOrLumenRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 91,
+                      "function": "makeApiCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 44,
+                      "function": "makeResponseCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 35,
+                      "function": "makeResponseCallIfConditionsPass",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 236,
+                      "function": "__invoke",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 166,
+                      "function": "iterateThroughStrategies",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 95,
+                      "function": "fetchResponses",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 125,
+                      "function": "processRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 72,
+                      "function": "extractEndpointsInfoFromLaravelApp",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 50,
+                      "function": "extractEndpointsInfoAndWriteToDisk",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php",
+                      "line": 53,
+                      "function": "get",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 36,
+                      "function": "handle",
+                      "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/Util.php",
+                      "line": 41,
+                      "function": "Illuminate\\Container\\{closure}",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 93,
+                      "function": "unwrapIfClosure",
+                      "class": "Illuminate\\Container\\Util",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 37,
+                      "function": "callBoundMethod",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+                      "line": 662,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 211,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\Container",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/symfony/console/Command/Command.php",
+                      "line": 326,
+                      "function": "execute",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 181,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Command\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/symfony/console/Application.php",
+                      "line": 1096,
+                      "function": "run",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/symfony/console/Application.php",
+                      "line": 324,
+                      "function": "doRunCommand",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/symfony/console/Application.php",
+                      "line": 175,
+                      "function": "doRun",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php",
+                      "line": 201,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/artisan",
+                      "line": 37,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Console\\Kernel",
+                      "type": "->"
+                  }
+              ]
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '6000'
+          x-ratelimit-remaining: '5999'
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=wdHOhhVDaXukxCVZZp9Wr01nSKwOFIfry6DaAE8G; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -76,7 +635,597 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 500
+        content: |-
+          {
+              "message": "SQLSTATE[42S02]: Base table or view not found: 1146 Table 'qnext.users' doesn't exist (Connection: mysql, SQL: update `users` set `socket_id` = ?, `users`.`updated_at` = 2024-04-01 12:39:27 where `username` is null and `users`.`deleted_at` is null)",
+              "exception": "Illuminate\\Database\\QueryException",
+              "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+              "line": 829,
+              "trace": [
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+                      "line": 783,
+                      "function": "runQueryCallback",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+                      "line": 619,
+                      "function": "run",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+                      "line": 552,
+                      "function": "affectingStatement",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+                      "line": 3561,
+                      "function": "update",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
+                      "line": 1060,
+                      "function": "update",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/app/Http/Controllers/DoctorController.php",
+                      "line": 243,
+                      "function": "update",
+                      "class": "Illuminate\\Database\\Eloquent\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Controller.php",
+                      "line": 54,
+                      "function": "updateSocket",
+                      "class": "App\\Http\\Controllers\\DoctorController",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php",
+                      "line": 43,
+                      "function": "callAction",
+                      "class": "Illuminate\\Routing\\Controller",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+                      "line": 260,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\ControllerDispatcher",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+                      "line": 205,
+                      "function": "runController",
+                      "class": "Illuminate\\Routing\\Route",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 806,
+                      "function": "run",
+                      "class": "Illuminate\\Routing\\Route",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 144,
+                      "function": "Illuminate\\Routing\\{closure}",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php",
+                      "line": 50,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 159,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 135,
+                      "function": "handleRequest",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+                      "line": 87,
+                      "function": "handleRequestUsingNamedLimiter",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php",
+                      "line": 121,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php",
+                      "line": 64,
+                      "function": "handleStatefulRequest",
+                      "class": "Illuminate\\Session\\Middleware\\StartSession",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Session\\Middleware\\StartSession",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 119,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 807,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 784,
+                      "function": "runRouteWithinStack",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 748,
+                      "function": "runRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 737,
+                      "function": "dispatchToRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 200,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 144,
+                      "function": "Illuminate\\Foundation\\Http\\{closure}",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+                      "line": 31,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+                      "line": 40,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php",
+                      "line": 27,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+                      "line": 99,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+                      "line": 62,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\HandleCors",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+                      "line": 39,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 119,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 175,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 144,
+                      "function": "sendRequestThroughRouter",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 300,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 288,
+                      "function": "callLaravelOrLumenRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 91,
+                      "function": "makeApiCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 44,
+                      "function": "makeResponseCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 35,
+                      "function": "makeResponseCallIfConditionsPass",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 236,
+                      "function": "__invoke",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 166,
+                      "function": "iterateThroughStrategies",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 95,
+                      "function": "fetchResponses",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 125,
+                      "function": "processRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 72,
+                      "function": "extractEndpointsInfoFromLaravelApp",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 50,
+                      "function": "extractEndpointsInfoAndWriteToDisk",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php",
+                      "line": 53,
+                      "function": "get",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 36,
+                      "function": "handle",
+                      "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/Util.php",
+                      "line": 41,
+                      "function": "Illuminate\\Container\\{closure}",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 93,
+                      "function": "unwrapIfClosure",
+                      "class": "Illuminate\\Container\\Util",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 37,
+                      "function": "callBoundMethod",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+                      "line": 662,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 211,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\Container",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/symfony/console/Command/Command.php",
+                      "line": 326,
+                      "function": "execute",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 181,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Command\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/symfony/console/Application.php",
+                      "line": 1096,
+                      "function": "run",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/symfony/console/Application.php",
+                      "line": 324,
+                      "function": "doRunCommand",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/symfony/console/Application.php",
+                      "line": 175,
+                      "function": "doRun",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php",
+                      "line": 201,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/artisan",
+                      "line": 37,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Console\\Kernel",
+                      "type": "->"
+                  }
+              ]
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '6000'
+          x-ratelimit-remaining: '5998'
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=ubCTLevZtQDGaBjdmjw3muWpxYGJuhcnAMQEjeWa; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/admin/list/full
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=uI74igQbOw48F2JoZTZE8ogQ90qojREX15Drahmw; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/admin/list
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=MJJJ8QBCbT8jY0BaWLwqqvAn9IW1IWQVFiSSQi03; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -106,7 +1255,17 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=vwPXijp2fX9LTLOLCaNYZmgEjUUm5iHudnF7nQtH; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -138,7 +1297,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: laboriosam
+        example: sunt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -147,7 +1306,7 @@ endpoints:
         name: number
         description: ''
         required: true
-        example: dignissimos
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -156,17 +1315,37 @@ endpoints:
         name: media_id
         description: ''
         required: false
-        example: 3
+        example: 12
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      floor_id:
+        name: floor_id
+        description: ''
+        required: false
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: laboriosam
-      number: dignissimos
-      media_id: 3
+      name: sunt
+      number: voluptas
+      media_id: 12
+      floor_id: 2
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=67PJL5KMtz5RTXrDXMsXAxBQvfR4LLJkERjwzGQP; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -194,13 +1373,13 @@ endpoints:
         name: room_id
         description: 'The ID of the room.'
         required: true
-        example: 13
+        example: 12
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      room_id: 13
+      room_id: 12
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -208,7 +1387,7 @@ endpoints:
         name: name
         description: ''
         required: false
-        example: quia
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -217,7 +1396,7 @@ endpoints:
         name: number
         description: ''
         required: false
-        example: vel
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -226,17 +1405,37 @@ endpoints:
         name: media_id
         description: ''
         required: false
-        example: 12
+        example: 19
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      floor_id:
+        name: floor_id
+        description: ''
+        required: false
+        example: 7
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: quia
-      number: vel
-      media_id: 12
+      name: et
+      number: est
+      media_id: 19
+      floor_id: 7
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=sVaAJf5PJPEbI7L0PfU8YFVFrOtWoLjdGWoCk4Rb; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -274,7 +1473,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'laravel_session=REske8FKcIEF49vAkIwzRivX8BuPVI2glcytftOM; expires=Mon, 25 Dec 2023 13:58:41 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'laravel_session=qtyntQH0JQJaswZS5WHUGzaI10VBw7ZUX1Ij8AoP; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -304,13 +1503,13 @@ endpoints:
         name: room_id
         description: 'The ID of the room.'
         required: true
-        example: 15
+        example: 16
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      room_id: 15
+      room_id: 16
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -324,7 +1523,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'laravel_session=ONLntUsL3JmG94l8buTP50z91C7zbJdELSwlYJ23; expires=Mon, 25 Dec 2023 13:58:41 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'laravel_session=Ossf3tRlnk44YLyGCp06Vu3yWYugcJ5J3gZYivzm; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -354,19 +1553,179 @@ endpoints:
         name: room
         description: 'The room.'
         required: true
-        example: 8
+        example: 6
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      room: 8
+      room: 6
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=dhBhythuh6v1ofGObAFjFNwgp7X4D1aPoCvukRgM; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/admin/room/floor
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: officia
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: officia
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=zNlQx1ziOojlCT7N9Y409jsyAjlETLfKeC4nySte; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/admin/room/floor/{floor_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      floor_id:
+        name: floor_id
+        description: 'The ID of the floor.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      floor_id: 2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: amet
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: amet
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=g2jhbVIsYgsIlH0L8lKOGJ7zlbHLK7NAPUbYIEJ2; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/admin/room/floor
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=Z76JRDaRiBaVehbR6xHcX6SO4geGGL3mQRtk1FeL; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -398,7 +1757,7 @@ endpoints:
         name: username
         description: ''
         required: false
-        example: deserunt
+        example: quo
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -407,14 +1766,14 @@ endpoints:
         name: password
         description: ''
         required: false
-        example: '~+]asan&t4Yv*[h^t'
+        example: 'T0z3wyE5V]f'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
       acl:
         name: acl
-        description: 'This field is required when none of <code>setting</code>, <code>queue</code>, and <code>personnel</code> are present.'
+        description: ''
         required: false
         example: null
         type: object
@@ -425,7 +1784,7 @@ endpoints:
         name: first_name
         description: ''
         required: false
-        example: repudiandae
+        example: aliquam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -434,7 +1793,7 @@ endpoints:
         name: last_name
         description: ''
         required: false
-        example: dignissimos
+        example: quod
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -443,7 +1802,7 @@ endpoints:
         name: media_id
         description: ''
         required: false
-        example: 4
+        example: 18
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -452,7 +1811,7 @@ endpoints:
         name: expertise_id
         description: ''
         required: false
-        example: 18
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -461,7 +1820,7 @@ endpoints:
         name: title_id
         description: ''
         required: false
-        example: 5
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -470,22 +1829,32 @@ endpoints:
         name: role
         description: ''
         required: false
-        example: in
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      username: deserunt
-      password: '~+]asan&t4Yv*[h^t'
-      first_name: repudiandae
-      last_name: dignissimos
-      media_id: 4
-      expertise_id: 18
-      title_id: 5
-      role: in
+      username: quo
+      password: 'T0z3wyE5V]f'
+      first_name: aliquam
+      last_name: quod
+      media_id: 18
+      expertise_id: 2
+      title_id: 17
+      role: aut
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=aBU2oo51OaM478u8Ce0PpGgeL6AKgtCo2l4Hbv0b; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -513,13 +1882,13 @@ endpoints:
         name: user_id
         description: 'The ID of the user.'
         required: true
-        example: 1
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      user_id: 1
+      user_id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -527,7 +1896,7 @@ endpoints:
         name: username
         description: ''
         required: false
-        example: nesciunt
+        example: neque
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -536,14 +1905,14 @@ endpoints:
         name: password
         description: ''
         required: false
-        example: 'r4=}}yZD-do469]'
+        example: '9v!X\Tx[@-KxSGA)e/$#'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
       acl:
         name: acl
-        description: 'This field is required when none of <code>setting</code>, <code>queue</code>, and <code>personnel</code> are present.'
+        description: ''
         required: false
         example: null
         type: object
@@ -554,7 +1923,7 @@ endpoints:
         name: first_name
         description: ''
         required: false
-        example: aliquam
+        example: ullam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -563,7 +1932,7 @@ endpoints:
         name: last_name
         description: ''
         required: false
-        example: voluptatum
+        example: sapiente
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -572,19 +1941,57 @@ endpoints:
         name: media_id
         description: ''
         required: false
-        example: sit
+        example: provident
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      expertise_id:
+        name: expertise_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      title_id:
+        name: title_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      role:
+        name: role
+        description: ''
+        required: false
+        example: ullam
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      username: nesciunt
-      password: 'r4=}}yZD-do469]'
-      first_name: aliquam
-      last_name: voluptatum
-      media_id: sit
+      username: neque
+      password: '9v!X\Tx[@-KxSGA)e/$#'
+      first_name: ullam
+      last_name: sapiente
+      media_id: provident
+      role: ullam
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=HhDmgZmzsV2oemv1LNYAsivKwPEKKuMDppfKhEuZ; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -622,7 +2029,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'laravel_session=KDgR16RDpucG6x4HLwt6H9MqXd2DrCmIilNS7kmI; expires=Mon, 25 Dec 2023 13:58:41 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'laravel_session=3Ck5KlCOBvsvYi7IR0bQLgsm0iLrkZNY8p6yvaDC; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -652,13 +2059,13 @@ endpoints:
         name: user_id
         description: 'The ID of the user.'
         required: true
-        example: 1
+        example: 13
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      user_id: 1
+      user_id: 13
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -672,7 +2079,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'laravel_session=CCLrIlMPbx2hNTnuU5i4UZPi7us9OBW94MopybfD; expires=Mon, 25 Dec 2023 13:58:41 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'laravel_session=nD5iQxurnzdmL5olMnKV6RryL4LmbSi34KiMTmJw; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -714,7 +2121,17 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=mevqrhllA02rcLuLnEauLk8AuzX8D1h5tjk9yPCX; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -742,7 +2159,7 @@ endpoints:
         name: user_id
         description: 'The ID of the user.'
         required: true
-        example: 1
+        example: 18
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -751,14 +2168,14 @@ endpoints:
         name: room_id
         description: 'The ID of the room.'
         required: true
-        example: 19
+        example: 10
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      user_id: 1
-      room_id: 19
+      user_id: 18
+      room_id: 10
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -772,7 +2189,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'laravel_session=19G6Iwxi1YN2nt1ISsvOufxalZaOnB07BireeTj1; expires=Mon, 25 Dec 2023 13:58:41 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'laravel_session=6I6Bh6SdSUt8gRQLKxU3X0gTjvQQt68M5lPjHCPu; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -806,15 +2223,105 @@ endpoints:
         name: turn_number
         description: ''
         required: true
-        example: 8
-        type: integer
+        example: deleniti
+        type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      turn_number: 8
+      turn_number: deleniti
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=3lSl42laufhSArP9z72ORADDLdwIa3XmOgiE1NYP; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/admin/doctor/turn/voice
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=f6hPI2oeTlq8tdM4DehMgs7mKhyJaDZKdGj5AcVB; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/admin/doctor/purge
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=mZTM35NTSvP1HqHwMLKXAxGPRqxE8xa8fvaCUwLc; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -846,7 +2353,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: libero
+        example: architecto
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -864,17 +2371,27 @@ endpoints:
         name: media_id
         description: ''
         required: false
-        example: 17
+        example: 7
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: libero
+      name: architecto
       is_title: true
-      media_id: 17
+      media_id: 7
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=Q4tetAh1yOobWBnZXZ7ro27hWMxLNa3ShcXU8swl; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -902,13 +2419,13 @@ endpoints:
         name: expertise_id
         description: 'The ID of the expertise.'
         required: true
-        example: 11
+        example: 5
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      expertise_id: 11
+      expertise_id: 5
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -916,7 +2433,7 @@ endpoints:
         name: name
         description: ''
         required: false
-        example: perferendis
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -925,7 +2442,7 @@ endpoints:
         name: is_title
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -934,17 +2451,27 @@ endpoints:
         name: media_id
         description: ''
         required: false
-        example: 19
+        example: 9
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: perferendis
-      is_title: false
-      media_id: 19
+      name: voluptas
+      is_title: true
+      media_id: 9
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=FdHCdDSA5Cj7fa5fZhGjt94uLWWPIYPbnr1n0okY; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -982,7 +2509,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'laravel_session=CzcU6AD5R9xFcBcYffPmuKCIFh1A8VanuBHC3Ypa; expires=Mon, 25 Dec 2023 13:58:41 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'laravel_session=VkNUWb1W8bIrYj4MTdpBIYdkfgJuxvFpkxgstZn6; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -1012,13 +2539,13 @@ endpoints:
         name: expertise_id
         description: 'The ID of the expertise.'
         required: true
-        example: 11
+        example: 18
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      expertise_id: 11
+      expertise_id: 18
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1032,7 +2559,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-          set-cookie: 'laravel_session=eoc5Ud2hsMKKjmlP83bMq1hprDnsPMMWsChLLvqV; expires=Mon, 25 Dec 2023 13:58:41 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'laravel_session=7SN2AoTl1tVWV7sgB0WLTSWvyduWdqTeoslAreiZ; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -1062,19 +2589,29 @@ endpoints:
         name: expertise
         description: 'The expertise.'
         required: true
-        example: 11
+        example: 14
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      expertise: 11
+      expertise: 14
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=P4R2R7G0j4qNws1F18ADmLPBPa0uWcf5urRzRrDO; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -1116,346 +2653,360 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 404
+        status: 405
         content: |-
           {
-              "message": "The route api/v1/admin/media/doctor|number|room|expertise could not be found.",
-              "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
-              "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
-              "line": 44,
+              "message": "The GET method is not supported for route api/v1/admin/media/doctor|number|room|expertise. Supported methods: DELETE.",
+              "exception": "Symfony\\Component\\HttpKernel\\Exception\\MethodNotAllowedHttpException",
+              "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+              "line": 122,
               "trace": [
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+                      "line": 107,
+                      "function": "requestMethodNotAllowed",
+                      "class": "Illuminate\\Routing\\AbstractRouteCollection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+                      "line": 41,
+                      "function": "getRouteForMethods",
+                      "class": "Illuminate\\Routing\\AbstractRouteCollection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
                       "line": 162,
                       "function": "handleMatchedRoute",
                       "class": "Illuminate\\Routing\\AbstractRouteCollection",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
                       "line": 761,
                       "function": "match",
                       "class": "Illuminate\\Routing\\RouteCollection",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
                       "line": 748,
                       "function": "findRoute",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
                       "line": 737,
                       "function": "dispatchToRoute",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
                       "line": 200,
                       "function": "dispatch",
                       "class": "Illuminate\\Routing\\Router",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 141,
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 144,
                       "function": "Illuminate\\Foundation\\Http\\{closure}",
                       "class": "Illuminate\\Foundation\\Http\\Kernel",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
                       "line": 21,
                       "function": "Illuminate\\Pipeline\\{closure}",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
                       "line": 31,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 180,
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
                       "line": 21,
                       "function": "Illuminate\\Pipeline\\{closure}",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
                       "line": 40,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 180,
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php",
                       "line": 27,
                       "function": "Illuminate\\Pipeline\\{closure}",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 180,
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
                       "line": 99,
                       "function": "Illuminate\\Pipeline\\{closure}",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 180,
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
                       "line": 62,
                       "function": "Illuminate\\Pipeline\\{closure}",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 180,
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\HandleCors",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
                       "line": 39,
                       "function": "Illuminate\\Pipeline\\{closure}",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 180,
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
                       "function": "handle",
                       "class": "Illuminate\\Http\\Middleware\\TrustProxies",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
-                      "line": 116,
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 119,
                       "function": "Illuminate\\Pipeline\\{closure}",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
                       "line": 175,
                       "function": "then",
                       "class": "Illuminate\\Pipeline\\Pipeline",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
                       "line": 144,
                       "function": "sendRequestThroughRouter",
                       "class": "Illuminate\\Foundation\\Http\\Kernel",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
-                      "line": 299,
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 300,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Http\\Kernel",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
-                      "line": 287,
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 288,
                       "function": "callLaravelOrLumenRoute",
                       "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
-                      "line": 92,
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 91,
                       "function": "makeApiCall",
                       "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
-                      "line": 45,
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 44,
                       "function": "makeResponseCall",
                       "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
                       "line": 35,
                       "function": "makeResponseCallIfConditionsPass",
                       "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
-                      "line": 209,
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 236,
                       "function": "__invoke",
                       "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
-                      "line": 163,
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 166,
                       "function": "iterateThroughStrategies",
                       "class": "Knuckles\\Scribe\\Extracting\\Extractor",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
                       "line": 95,
                       "function": "fetchResponses",
                       "class": "Knuckles\\Scribe\\Extracting\\Extractor",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
-                      "line": 124,
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 125,
                       "function": "processRoute",
                       "class": "Knuckles\\Scribe\\Extracting\\Extractor",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
-                      "line": 71,
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 72,
                       "function": "extractEndpointsInfoFromLaravelApp",
                       "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
-                      "line": 49,
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 50,
                       "function": "extractEndpointsInfoAndWriteToDisk",
                       "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php",
-                      "line": 51,
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php",
+                      "line": 53,
                       "function": "get",
                       "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
                       "line": 36,
                       "function": "handle",
                       "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Container/Util.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/Util.php",
                       "line": 41,
                       "function": "Illuminate\\Container\\{closure}",
                       "class": "Illuminate\\Container\\BoundMethod",
                       "type": "::"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
                       "line": 93,
                       "function": "unwrapIfClosure",
                       "class": "Illuminate\\Container\\Util",
                       "type": "::"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
-                      "line": 35,
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 37,
                       "function": "callBoundMethod",
                       "class": "Illuminate\\Container\\BoundMethod",
                       "type": "::"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/Container.php",
                       "line": 662,
                       "function": "call",
                       "class": "Illuminate\\Container\\BoundMethod",
                       "type": "::"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Console/Command.php",
                       "line": 211,
                       "function": "call",
                       "class": "Illuminate\\Container\\Container",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/symfony/console/Command/Command.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/symfony/console/Command/Command.php",
                       "line": 326,
                       "function": "execute",
                       "class": "Illuminate\\Console\\Command",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Console/Command.php",
-                      "line": 180,
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 181,
                       "function": "run",
                       "class": "Symfony\\Component\\Console\\Command\\Command",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/symfony/console/Application.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/symfony/console/Application.php",
                       "line": 1096,
                       "function": "run",
                       "class": "Illuminate\\Console\\Command",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/symfony/console/Application.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/symfony/console/Application.php",
                       "line": 324,
                       "function": "doRunCommand",
                       "class": "Symfony\\Component\\Console\\Application",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/symfony/console/Application.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/symfony/console/Application.php",
                       "line": 175,
                       "function": "doRun",
                       "class": "Symfony\\Component\\Console\\Application",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php",
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php",
                       "line": 201,
                       "function": "run",
                       "class": "Symfony\\Component\\Console\\Application",
                       "type": "->"
                   },
                   {
-                      "file": "/var/www/html/back/qnext/artisan",
-                      "line": 35,
+                      "file": "/var/www/html/qnext-back-v1/artisan",
+                      "line": 37,
                       "function": "handle",
                       "class": "Illuminate\\Foundation\\Console\\Kernel",
                       "type": "->"
@@ -1463,6 +3014,7 @@ endpoints:
               ]
           }
         headers:
+          allow: DELETE
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
@@ -1507,7 +3059,425 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 405
+        content: |-
+          {
+              "message": "The POST method is not supported for route api/v1/admin/media/doctor|number|room|expertise. Supported methods: DELETE.",
+              "exception": "Symfony\\Component\\HttpKernel\\Exception\\MethodNotAllowedHttpException",
+              "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+              "line": 122,
+              "trace": [
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+                      "line": 107,
+                      "function": "requestMethodNotAllowed",
+                      "class": "Illuminate\\Routing\\AbstractRouteCollection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+                      "line": 41,
+                      "function": "getRouteForMethods",
+                      "class": "Illuminate\\Routing\\AbstractRouteCollection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
+                      "line": 162,
+                      "function": "handleMatchedRoute",
+                      "class": "Illuminate\\Routing\\AbstractRouteCollection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 761,
+                      "function": "match",
+                      "class": "Illuminate\\Routing\\RouteCollection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 748,
+                      "function": "findRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+                      "line": 737,
+                      "function": "dispatchToRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 200,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 144,
+                      "function": "Illuminate\\Foundation\\Http\\{closure}",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+                      "line": 31,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+                      "line": 40,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php",
+                      "line": 27,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+                      "line": 99,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+                      "line": 62,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\HandleCors",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+                      "line": 39,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 183,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+                      "line": 119,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 175,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+                      "line": 144,
+                      "function": "sendRequestThroughRouter",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 300,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 288,
+                      "function": "callLaravelOrLumenRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 91,
+                      "function": "makeApiCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 44,
+                      "function": "makeResponseCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Strategies/Responses/ResponseCalls.php",
+                      "line": 35,
+                      "function": "makeResponseCallIfConditionsPass",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 236,
+                      "function": "__invoke",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 166,
+                      "function": "iterateThroughStrategies",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Extracting/Extractor.php",
+                      "line": 95,
+                      "function": "fetchResponses",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 125,
+                      "function": "processRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 72,
+                      "function": "extractEndpointsInfoFromLaravelApp",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/GroupedEndpoints/GroupedEndpointsFromApp.php",
+                      "line": 50,
+                      "function": "extractEndpointsInfoAndWriteToDisk",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/knuckleswtf/scribe/src/Commands/GenerateDocumentation.php",
+                      "line": 53,
+                      "function": "get",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 36,
+                      "function": "handle",
+                      "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/Util.php",
+                      "line": 41,
+                      "function": "Illuminate\\Container\\{closure}",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 93,
+                      "function": "unwrapIfClosure",
+                      "class": "Illuminate\\Container\\Util",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php",
+                      "line": 37,
+                      "function": "callBoundMethod",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Container/Container.php",
+                      "line": 662,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 211,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\Container",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/symfony/console/Command/Command.php",
+                      "line": 326,
+                      "function": "execute",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Console/Command.php",
+                      "line": 181,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Command\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/symfony/console/Application.php",
+                      "line": 1096,
+                      "function": "run",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/symfony/console/Application.php",
+                      "line": 324,
+                      "function": "doRunCommand",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/symfony/console/Application.php",
+                      "line": 175,
+                      "function": "doRun",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php",
+                      "line": 201,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "/var/www/html/qnext-back-v1/artisan",
+                      "line": 37,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Console\\Kernel",
+                      "type": "->"
+                  }
+              ]
+          }
+        headers:
+          allow: DELETE
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/admin/media/{media_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      media_id:
+        name: media_id
+        description: 'The ID of the media.'
+        required: true
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      media_id: 15
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          set-cookie: 'laravel_session=k5MtjTKsUngFrOf76q9CxioQP6JgYdsDasIQ2Io0; expires=Mon, 01 Apr 2024 14:39:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null

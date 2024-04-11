@@ -17,7 +17,6 @@ return new class extends Migration
             $table->integer('number');
             $table->foreignId('media_id')->nullable()->constrained('medias');
             $table->foreignId('clinic_id')->default(1)->constrained('clinics');
-            $table->foreignId('media_id')->nullable()->constrained('medias');
             $table->timestamps();
             $table->softDeletes();
         });
