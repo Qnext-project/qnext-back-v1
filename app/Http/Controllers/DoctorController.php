@@ -67,8 +67,11 @@ class DoctorController extends Controller
 	$rooms = Room::where('floor_id', $floor->id)->has('users')->get();
 	$doctors = [];
 	foreach ($rooms as $room) {
-        $doctors[] = User::where([['role', '=', 'admin'], ['room_id', '=', $room->id]])->whereNotNull('current_turn_number')->first();
-}
+        $user = User::where([['role', '=', 'admin'], ['room_id', '=', $room->id]])->whereNotNull('current_turn_number')->first();
+        if($user){
+            $doctors[] = $user;
+        }
+    }
         return response()->json($doctors);
     }
 
