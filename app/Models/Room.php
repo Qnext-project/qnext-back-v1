@@ -32,6 +32,10 @@ class Room extends Model
         return $this->belongsTo(Floor::class, 'floor_id');
     }
 
+    public function users(){
+        return $this->hasMany(User::class, 'room_id', 'id');
+    }
+
     public function getFloorNameAttribute(){
 
 	return $this->floor_id ? Floor::find($this->floor_id)?->name : null;
