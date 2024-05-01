@@ -163,7 +163,7 @@ return response()->noContent();
         $audios = [];
         $audios['num'] = Media::where('name', 'LIKE', '%Shomare%')->first();
         $audios['room'] = Media::where('name', 'LIKE', '%به اتاقِ%')->first();
-        $audios['room_num'] = Media::find($room?->media_id) ?? Media::where('name', 'LIKE', "%{$userUp->doc_info['room']}%")->first();
+ //       $audios['room_num'] = Media::find($room?->media_id) ?? Media::where('name', 'LIKE', "%{$userUp->doc_info['room']}%")->first();
 /*         $audios['title'] = Media::find($expTitle?->media_id);
         $audios['expertise'] = Media::find($exp?->media_id); */
         $num = intval($userUp->current_turn_number);
