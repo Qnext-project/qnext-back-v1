@@ -143,7 +143,7 @@ return response()->noContent();
         $exp = Expertise::find($attachedDoc?->expertise_id);
         $room = Room::where(
             [[
-                'id', '=', $userUp?->doc_info['room']
+                'id', '=', $userUp?->doc_info['room'] ?? 1
             ],
             ]
         );
