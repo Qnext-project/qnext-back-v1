@@ -134,17 +134,17 @@ return response()->noContent();
 
     public function getDocVoice(Request $request)
     {
-        $userUp = User::find($request['id']);
-        $attachedDoc = User::find($userUp->doctor_id);
-        $expTitle = Expertise::find($attachedDoc->title_id);
-        $exp = Expertise::find($attachedDoc->expertise_id);
+        $userUp = User::find($request['doctor_id']);
+        $attachedDoc = User::find($userUp?->doctor_id);
+        $expTitle = Expertise::find($attachedDoc?->title_id);
+        $exp = Expertise::find($attachedDoc?->expertise_id);
         $room = Room::where(
             [[
-                'id', '=', $userUp->doc_info['room']
+                'id', '=', $userUp?->doc_info['room']
             ],
             ]
         );
-        if ($userUp->current_turn_number == 0 || $userUp->current_turn_number == null) {
+        if ($userUp?->current_turn_number == 0 || $userUp?->current_turn_number == null) {
             return response()->json(null, 200);
         }
         $audios = [];

@@ -110,7 +110,7 @@ class User extends Authenticatable implements JWTSubject
     public function getTitleNameAttribute()
     {
         if($this->title_id){
-            return Expertise::find($this->title_id)->name;
+            return Expertise::find($this->title_id)?->name;
         }
         return null;
     }
@@ -118,7 +118,7 @@ class User extends Authenticatable implements JWTSubject
     public function getExpertiseNameAttribute()
     {
         if($this->expertise_id){
-            return Expertise::find($this->expertise_id)->name;
+            return Expertise::find($this->expertise_id)?->name;
         }
         return null;
     }

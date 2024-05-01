@@ -40,7 +40,7 @@ class ExpertiseController extends Controller
         return response()->json($expertise);
     }
 
-    public function remove(int $expertise)
+    public function remove(int $expertise_id)
     {
         $expertise = Expertise::find($expertise);
         $expertise->delete();

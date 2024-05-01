@@ -68,7 +68,7 @@ Route::prefix('v1')->group(function () {
                     Route::put('{expertise}', [ExpertiseController::class, 'edit']);
                     Route::get('', [ExpertiseController::class, 'index']);
                     Route::get('{expertise}', [ExpertiseController::class, 'show']);
-                    Route::delete('{expertise}', [ExpertiseController::class, 'remove']);
+                    Route::delete('{expertise_id}', [ExpertiseController::class, 'remove']);
                 });
                 Route::prefix('media')->group(function () {
                     Route::get('{type}', [MediaController::class, 'index'])->whereIn('type', ['doctor', 'number', 'room', 'expertise']);
