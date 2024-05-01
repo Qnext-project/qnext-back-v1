@@ -135,15 +135,25 @@ $user = User::find($user);
 return response()->noContent();
 }
 
+    public function getDocVoice2(Request $request){
+        $user = User::find($request['id']);
+        
+    }
     public function getDocVoice(Request $request)
     {
-        $userUp = User::find($request['doctor_id']);
-        $attachedDoc = User::find($userUp?->doctor_id);
+        $userUp = User::find($request['id']);
+/*         $attachedDoc = User::find($userUp?->doctor_id);
         $expTitle = Expertise::find($attachedDoc?->title_id);
-        $exp = Expertise::find($attachedDoc?->expertise_id);
-        $room = Room::where(
+        $exp = Expertise::find($attachedDoc?->expertise_id); */
+        /* $room = Room::where(
             [[
                 'id', '=', $userUp?->doc_info['room']
+            ],
+            ]
+        ); */
+        $room = Room::where(
+            [[
+                'id', '=', $request['rooms_id']
             ],
             ]
         );
@@ -154,8 +164,8 @@ return response()->noContent();
         $audios['num'] = Media::where('name', 'LIKE', '%Shomare%')->first();
         $audios['room'] = Media::where('name', 'LIKE', '%به اتاقِ%')->first();
         $audios['room_num'] = Media::find($room?->media_id) ?? Media::where('name', 'LIKE', "%{$userUp->doc_info['room']}%")->first();
-        $audios['title'] = Media::find($expTitle?->media_id);
-        $audios['expertise'] = Media::find($exp?->media_id);
+/*         $audios['title'] = Media::find($expTitle?->media_id);
+        $audios['expertise'] = Media::find($exp?->media_id); */
         $num = intval($userUp->current_turn_number);
         $numLen = strlen((string) $num);
         if ($numLen == 1) {
