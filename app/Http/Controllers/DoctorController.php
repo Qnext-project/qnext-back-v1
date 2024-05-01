@@ -156,10 +156,10 @@ return response()->noContent();
             return response()->json(null, 200);
         }
         $ctn = strval($userUp?->current_turn_number);
-        $theRoom = strval($request['room_id']);
+        $roomNumber = strval($room?->number);
         $audios = [];
         $audios['num'] = Media::where('name', 'LIKE', $ctn)->first();
-        $audios['room'] = Media::where('name', 'LIKE', $theRoom)->first();
+        $audios['room'] = Media::where('name', 'LIKE', $roomNumber)->first();
        /*  $audios['num'] = Media::where('name', 'LIKE', '%Shomare%')->first();
         $audios['room'] = Media::where('name', 'LIKE', '%به اتاقِ%')->first(); */
         $audios['room_num'] = Media::find($room?->media_id) ?? Media::where('name', 'LIKE', "%{$userUp->doc_info['room']}%")->first();
