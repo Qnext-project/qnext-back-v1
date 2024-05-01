@@ -165,7 +165,9 @@ return response()->noContent();
         $num = intval($userUp->current_turn_number);
         $numLen = strlen((string) $num);
         if ($numLen == 1) {
-            $audios['numbers'][0] = Media::where('name', 'LIKE', "%{$num}%")->first();
+   //         $audios['numbers'][0] = Media::where('name', 'LIKE', "%{$num}%")->first();
+            $audios['numbers'][0] = Media::where('name', 'LIKE', "{$num}")->first();
+
         } else if ($numLen == 2 && $num <= 20) {
             $audios['numbers'][0] = Media::where('name', 'LIKE', "%{$num}%")->first();
         } else if ($numLen == 2 && $num > 20) {
