@@ -1,0 +1,16 @@
+{
+    "name": "sepmni/strict-types",
+    "description": "Adds strict types declaration recursively to your PHP files",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sepehr Mohseni",
+            "email": "sepmni@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.2 || ^8.0"
+    }
+}
